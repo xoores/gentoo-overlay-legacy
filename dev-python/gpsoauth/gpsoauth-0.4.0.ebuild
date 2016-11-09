@@ -9,7 +9,7 @@ inherit distutils-r1
 
 DESCRIPTION="A python client library for Google Play Services OAuth"
 HOMEPAGE="https://github.com/simon-weber/gpsoauth"
-SRC_URI="https://github.com/simon-weber/${PN}/${P}.tar.gz"
+SRC_URI="https://github.com/simon-weber/${PN}/archive/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
