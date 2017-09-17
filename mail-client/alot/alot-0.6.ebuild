@@ -21,6 +21,7 @@ DEPEND="
 	test? ( dev-python/mock[${PYTHON_USEDEP}] )
 	"
 RDEPEND="
+	app-crypt/gpgme[${PYTHON_USEDEP}]
 	>=dev-python/configobj-4.7.0[${PYTHON_USEDEP}]
 	>=dev-python/pygpgme-0.2[${PYTHON_USEDEP}]
 	dev-python/python-magic[${PYTHON_USEDEP}]
@@ -30,7 +31,7 @@ RDEPEND="
 	net-mail/mailbase
 	>=net-mail/notmuch-0.13[crypt,python]
 	"
-PATCHES=( "${FILESDIR}"/0.5.1-0001-Don-t-install-test-suite.patch )
+#PATCHES=( "${FILESDIR}"/0.5.1-0001-Don-t-install-test-suite.patch )
 
 ALOT_UPDATE=""
 
