@@ -3,7 +3,7 @@
 # $Id$
 
 EAPI=5
-PYTHON_COMPAT=(python2_7)
+PYTHON_COMPAT=( python2_7)
 
 inherit vcs-snapshot distutils-r1
 
@@ -17,14 +17,14 @@ IUSE="test"
 
 RDEPEND=">=dev-python/appdirs-1.1.0[${PYTHON_USEDEP}]
 	>=dev-python/decorator-3.3.1[${PYTHON_USEDEP}]
-	>=dev-python/gpsoauth-0.0.4[${PYTHON_USEDEP}]
+	>=dev-python/gpsoauth-0.4.0[${PYTHON_USEDEP}]
 	>=dev-python/mock-0.7.0[${PYTHON_USEDEP}]
 	>=dev-python/oauth2client-1.1[${PYTHON_USEDEP}]
-	>=dev-python/requests-2.6.0[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.9.1[${PYTHON_USEDEP}]
 	dev-python/validictory[${PYTHON_USEDEP}]
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
-	>=dev-libs/protobuf-2.4.1[python,${PYTHON_USEDEP}]
-	>=media-libs/mutagen-1.18[${PYTHON_USEDEP}]
+	>=dev-python/protobuf-python-3.0.0[${PYTHON_USEDEP}]
+	>=media-libs/mutagen-1.34[${PYTHON_USEDEP}]
 	>=dev-python/proboscis-1.2.5.1[${PYTHON_USEDEP}]
 	"
 DEPEND="${RDEPEND}
