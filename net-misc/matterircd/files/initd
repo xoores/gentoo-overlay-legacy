@@ -1,0 +1,44 @@
+#!/sbin/openrc-run
+
+command="/usr/bin/matterircd"
+
+
+
+###########################################################
+# CONFIGURATION
+
+# Default binding interface for created IRC server
+MIRC_BIND="127.0.0.1:6667"
+
+# Mattermost server (:443 for https)
+MIRC_MMSERVER="mattermost.domain.com:443"
+
+# Mattermost team (as shown in URL)
+MIRC_MMTEAM="it"
+###########################################################
+
+MIRC_PARAMS="-bind ${MIRC_BIND} -mmserver ${MIRC_MMSERVER} -mmteam ${MIRC_MMTEAM}"
+
+depend() {
+    need net
+}
+
+start() {
+    ebegin "Starting matterircd"
+    start-stop-daemon --start \
+            --make-pidfile \
+            --background \
+            --user matterbridge \
+            --group matterbridge \
+            --pidfile /var/run/matterircd.pid \
+            -- $command ${MIRC_PARAMS}
+    eend $?
+}
+
+stop() {
+    ebegin "Stopping matterircd"
+    start-stop-daemon --stop \
+            --pidfile /var/run/matterircd.pid \
+            -- $command ${MIRC_PARAMS}
+    eend $?
+}
